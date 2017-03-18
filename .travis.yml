@@ -1,24 +1,25 @@
----
 language: node_js
 node_js:
-  - "6"
-
+- '6'
 sudo: false
-
 cache:
   directories:
-    - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
-
+  - "$HOME/.npm"
+  - "$HOME/.cache"
 before_install:
-  - npm config set spin false
-  - npm install -g bower phantomjs-prebuilt
-  - bower --version
-  - phantomjs --version
-
+- npm config set spin false
+- npm install -g bower phantomjs-prebuilt
+- bower --version
+- phantomjs --version
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: HJp/f4EYa+TjWEWpV5CCaeTu5/sz2TLvcs7Zimi+bBnZVMPpdZV2DdzkVz9LVLbKGO8V8uQ8XwXu0gNPWPu+NJAmUZXX3EP/X4ppjM+EppKloBYZIL6Ydpsnqr/6wxkm+PNfTQEvKfOkV74GNR46XVNnvdUnaanjenlNhKU6oHx/3dpZjqtV1JvORdX6csRGNJ0lB+N77OQ0Ur6RIfLzEkwqknMmAgyqpYuDX95dI2PJpjG1pgb2Wse1I+DTYk8pMz5RjCnSol49Gjul4qxlqgq7AcIP2yjO9+gbCuAutq/ixYrutOh8zOpQGn1bQRrMvdYY1RDbVqdXZsm9GRBzMxENFrFAjD8aofvK/tDvjZmBizgf+h+0gKq7mBprwpNck5MR9r271NBMHXBgW4ofAXoIs9TGPZFJtvAp/mY9mms9b5PEvLUE5Nx4MXmmwvEOl6yZFGWFsY8Kz7R60At3Kagb2FSR7wWHGpZyaWwA/FZXwpRphQdYyav8k3o8/is58pnF1qFGCv2S4UNyMqY8YElnIseUOkD5P7YNlUu9hko32o3V4EzdvPusG3zgpzVJIgFSsRVSa+MaO8HNIoaAIfigdwNHyhtqqr5wQQDonK/2o3ILUzLKf+W/KFwoNcLJsISMGAnCyVLN2rwhL0xA0NJuD73Aig32OtCHxrRNLTY=
+  app: evening-forest-52412
+  on:
+    repo: williamweckl/peepchat-ui
