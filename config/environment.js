@@ -20,6 +20,11 @@ module.exports = function(environment) {
       host: 'http://localhost:4000',
       namespace: 'api'
     },
+    'ember-simple-auth': {
+      authenticationRoute: 'auth.login',
+      routeIfAlreadyAuthenticated: 'app.index',
+      routeAfterAuthentication: 'app.index'
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
