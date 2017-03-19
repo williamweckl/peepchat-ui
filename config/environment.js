@@ -25,6 +25,10 @@ module.exports = function(environment) {
       routeIfAlreadyAuthenticated: 'app.index',
       routeAfterAuthentication: 'app.index'
     },
+    flashMessageDefaults: {
+      timeout: 3000,
+      extendedTimeout: 375
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
