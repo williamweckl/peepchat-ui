@@ -1,17 +1,19 @@
-{{#x-card
-  onsubmit=attrs.onsubmit
-  title='Login to Peepchat'
-  buttonText='Login'}}
+{{#x-card onsubmit=attrs.onsubmit
+          title='Login to Peepchat'
+          buttonText='Login'
+          buttonDisabled=validations.messages.length}}
   <div class="row">
-    {{x-input
-      classNames='col s12'
-      type='email'
-      label='Username'}}
+    {{x-input value=model.email
+              errors=validations.attrs.model.email.messages
+              classNames='col s12'
+              type='email'
+              label='Username'}}
   </div>
   <div class="row">
-    {{x-input
-      classNames='col s12'
-      type='password'
-      label='Password'}}
+    {{x-input value=model.password
+              errors=validations.attrs.model.password.messages
+              classNames='col s12'
+              type='password'
+              label='Password'}}
   </div>
 {{/x-card}}
