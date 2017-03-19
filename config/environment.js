@@ -16,6 +16,10 @@ module.exports = function(environment) {
         Date: false
       }
     },
+    DS: {
+      host: 'http://localhost:4000',
+      namespace: 'api'
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -43,7 +47,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.DS.host = 'https://warm-atoll-87239.herokuapp.com';
   }
 
   return ENV;
