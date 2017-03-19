@@ -29,6 +29,9 @@ module.exports = function(environment) {
       timeout: 3000,
       extendedTimeout: 375
     },
+    fastboot: {
+      hostWhitelist: ['evening-forest-52412.herokuapp.com', /^localhost:\d+$/]
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
