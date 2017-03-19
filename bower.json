@@ -1,5 +1,6 @@
 {
   "name": "peepchat",
   "dependencies": {
+    "materialize": "0.97.7"
   }
 }
